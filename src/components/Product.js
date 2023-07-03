@@ -5,7 +5,7 @@ const Product = (props) => {
   
   const { Productp} = props;
   return (
-        <Link to={`/products/${Productp._id}`}>
+        <Link to={`/products/${Productp._id}`} >
         <div>
         <img src={Productp.image} alt="pizza" />
         <div className="text-center">
