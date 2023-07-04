@@ -16,7 +16,7 @@ const SingleProduct = () => {
       const getpizza = getPizzaById(params._id);
       console.log(getpizza);
      setCurrentPizza(getpizza);
-    },[])
+    })
     function goBack(){
         navigate(
             -1
@@ -30,7 +30,7 @@ const SingleProduct = () => {
         {/* <Link to="/"> */}
           <button className="mb-12 font-bold" onClick={goBack}> Back</button>
           <div className="flex">
-              <img src="/images/peproni.png" alt="pizza" />
+              <img src={currentPizza?.image} alt="pizza" />
               <div className="ml-16">
                   <h1 className="text-xl font-bold">{currentPizza?.name}</h1>
                   <div className="text-md">{currentPizza?.size}</div>
