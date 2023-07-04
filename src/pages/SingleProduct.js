@@ -2,6 +2,7 @@
 import { useEffect,useState } from 'react';
 import {Link, useNavigate,useParams}from 'react-router-dom'
 import PizzaData from '../components/PizzaData.json'
+import {getAllPizzas,getPizzaById} from '../helper';
 const SingleProduct = () => {
     const navigate=useNavigate();
 
@@ -11,9 +12,10 @@ const SingleProduct = () => {
     const [currentPizza,setCurrentPizza] = useState({});
 
     useEffect(()=>{
-      const pizzas=PizzaData?.pizzaData;
-      console.log(pizzas,"pizzas")
-     setCurrentPizza(pizzas?.find((pizza)=> pizza._id==params._id));
+      console.log(typeof params._id)
+      const getpizza = getPizzaById(params._id);
+      console.log(getpizza);
+     setCurrentPizza(getpizza);
     },[])
     function goBack(){
         navigate(

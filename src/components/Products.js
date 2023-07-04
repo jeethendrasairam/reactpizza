@@ -1,11 +1,10 @@
 import Product from './Product'
  import { useState, useEffect } from 'react'
- import PizzaData from './PizzaData.json'
+ import {getAllPizzas,getPizzaById} from '../helper';
  const Products = () => {
  const [Products1, setProducts] = useState([]);
 useEffect(() => {
-    console.log(PizzaData.pizzaData)
-    setProducts(PizzaData.pizzaData)
+    setProducts(getAllPizzas())
 });
   return (
     <div className="container mx-auto pb-24">
