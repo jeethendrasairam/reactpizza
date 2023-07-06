@@ -8,7 +8,7 @@ import Cart from './pages/Cart';
 import Navigation from './components/navigation';
 import { CartContext } from './pages/CartContext';
 import { useEffect, useState } from 'react';
-
+import { getCart,storeCart } from './pages/helper1';
 
 
 
@@ -17,12 +17,15 @@ const App = () =>{
     const [ cart, setCart ]=useState({});
     // local storage
     useEffect(()=>{
-       const cart  = window.localStorage.getItem('cart');
-       setCart(JSON.parse(cart));
+        getCart().then(cart=>{
+            setCart(JSON.parse(cart));
+        });
+       
        
     },[]);
     useEffect(()=>{
-        window.localStorage.setItem('cart', JSON.stringify(cart));
+        storeCart(JSON.stringify(cart));
+       
     },[cart]);
     return (
         <>
