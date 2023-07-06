@@ -16,7 +16,7 @@ const SingleProduct = () => {
       const getpizza = getPizzaById(params._id);
       console.log(getpizza);
      setCurrentPizza(getpizza);
-    })
+    },[]);
     function goBack(){
         navigate(
             -1
@@ -43,5 +43,5 @@ const SingleProduct = () => {
     )
   }
   
-  export default SingleProduct
+  export default SingleProduct;
 

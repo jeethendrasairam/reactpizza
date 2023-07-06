@@ -1,7 +1,9 @@
 import Product from './Product'
- import { useState, useEffect } from 'react'
+ import { useState, useEffect ,useContext } from 'react'
  import {getAllPizzas,getPizzaById} from '../helper';
+ import { CartContext } from '../pages/CartContext.js';
  const Products = () => {
+  // const{name}= useContext(CartContext)
  const [Products1, setProducts] = useState([]);
 useEffect(() => {
     setProducts(getAllPizzas())
